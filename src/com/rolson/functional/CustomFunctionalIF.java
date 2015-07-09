@@ -12,6 +12,9 @@ package com.rolson.functional;
  * The @FunctionalInterface annotation can be used. The functional interfaces
  * can contain a static or default method, but should contain only one abstract
  * method.
+ * 
+ * @author rolson.quadras@gmail.com
+ * @since 1.0.0
  */
 @FunctionalInterface
 public interface CustomFunctionalIF {

@@ -8,33 +8,32 @@ package com.rolson.functional;
 
 /**
  * This class demonstrates the functional programming in Java using lambda
- * expression. display(CustomFunctionalIF) method takes a functional interface
- * as one of the parameters. The behavior is passed using lambda expressions.
- * This class demonstrates the functional programming with custom functional
- * interface.
+ * expression. threadStart(CustomFunctionalIF) method takes a functional
+ * interface as one of the parameters. The behavior is passed using lambda
+ * expressions. This class demonstrates the functional programming with java
+ * build in functional interface Runnable.
  * 
  * @author rolson.quadras@gmail.com
  * @since 1.0.0
  */
-public class CustomFunctionalMain {
+public class JavaFunctuonalMain {
 
-	// Java Application launcher
 	public static void main(String[] args) {
 		// Pre-Java 8 way of sending the behavior to a method.
-		display(new CustomFunctionalIF() {
+		threadStart(new Runnable() {
 
 			@Override
-			public void sayHello() {
-				System.out.println("Hello, Boring Lenghty Programming!!");
+			public void run() {
+				System.out.println("Hello Thread, Boring Lenghty Programming!!");
 			}
 		});
 		// The Java 8 way - lambda expressions can be used only with functional
 		// interfaces.
-		display(() -> System.out.println("Hello, Functional Programming!! Woohooo!"));
+		threadStart(() -> System.out.println("Hello Thread, Functional Programming!! Woohooo!"));
 	}
 
 	// private static method, just to demonstrate the funnctional programming
-	private static void display(CustomFunctionalIF funcIF) {
-		funcIF.sayHello();
+	private static void threadStart(Runnable runnable) {
+		new Thread(runnable).start();
 	}
 }
