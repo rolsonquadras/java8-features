@@ -1,4 +1,4 @@
-# Java8Fetaures
+# Java8Features
 Java 8 Enhancement code samples
 
 ##Modules
