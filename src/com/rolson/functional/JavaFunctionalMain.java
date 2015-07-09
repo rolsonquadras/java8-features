@@ -13,7 +13,7 @@ package com.rolson.functional;
  * expressions. This class demonstrates the functional programming with java
  * build in functional interface Runnable.
  */
-public class JavaFunctuonalMain {
+public class JavaFunctionalMain {
 
 	public static void main(String[] args) {
 		// Pre-Java 8 way of sending the behavior to a method.
