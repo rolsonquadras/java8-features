@@ -4,7 +4,9 @@
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, version 3 of the License.*/
 
-package com.rolson.functional;
+
+package com.rolsonquadras.java8.functional;
+
 
 /**
  * This class demonstrates the functional programming in Java using lambda
@@ -12,29 +14,24 @@ package com.rolson.functional;
  * as one of the parameters. The behavior is passed using lambda expressions.
  * This class demonstrates the functional programming with custom functional
  * interface.
- * 
+ *
  * @author rolson.quadras@gmail.com
  * @since 1.0.0
  */
 public class CustomFunctionalMain {
 
-	// Java Application launcher
-	public static void main(String[] args) {
-		// Pre-Java 8 way of sending the behavior to a method.
-		display(new CustomFunctionalIF() {
+    // Java Application launcher
+    public static void main(final String[] args) {
+        // Pre-Java 8 way of sending the behavior to a method.
+        display(() -> System.out.println("Hello, Boring Lenghty Programming!!"));
+        
+        // The Java 8 way - lambda expressions can be used only with functional
+        // interfaces.
+        display(() -> System.out.println("Hello, Functional Programming!! Woohooo!"));
+    }
 
-			@Override
-			public void sayHello() {
-				System.out.println("Hello, Boring Lenghty Programming!!");
-			}
-		});
-		// The Java 8 way - lambda expressions can be used only with functional
-		// interfaces.
-		display(() -> System.out.println("Hello, Functional Programming!! Woohooo!"));
-	}
-
-	// private static method, just to demonstrate the funnctional programming
-	private static void display(CustomFunctionalIF funcIF) {
-		funcIF.sayHello();
-	}
+    // private static method, just to demonstrate the funnctional programming
+    private static void display(final CustomFunctionalIF funcIF) {
+        funcIF.sayHello();
+    }
 }
